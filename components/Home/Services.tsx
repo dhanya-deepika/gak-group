@@ -1,7 +1,14 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function ServicesSection() {
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    router.push("/services"); // redirect to /services page
+  };
+
   return (
     <section className="flex flex-col items-center py-16 sm:py-20 bg-white">
       {/* Heading */}
@@ -20,12 +27,13 @@ export default function ServicesSection() {
       <div className="mt-12 flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-25 items-center">
         {/* For Customers */}
         <div
+          onClick={handleRedirect}
           className="
-            w-[250px] h-[260px]   /* mobile */
-            sm:w-[300px] sm:h-[320px] /* tablet */
-            lg:w-[371px] lg:h-[377px] /* desktop */
+            cursor-pointer
+            w-[250px] h-[260px] sm:w-[300px] sm:h-[320px] lg:w-[371px] lg:h-[377px]
             flex flex-col items-center justify-center gap-6 
             rounded-[24px] sm:rounded-[30px] lg:rounded-[40px]
+            transition-transform duration-300 hover:scale-105 hover:shadow-lg
           "
           style={{
             border: "2px solid transparent",
@@ -54,12 +62,13 @@ export default function ServicesSection() {
 
         {/* For Developers */}
         <div
+          onClick={handleRedirect}
           className="
-            w-[250px] h-[260px]   
-            sm:w-[300px] sm:h-[320px] 
-            lg:w-[371px] lg:h-[377px] 
+            cursor-pointer
+            w-[250px] h-[260px] sm:w-[300px] sm:h-[320px] lg:w-[371px] lg:h-[377px]
             flex flex-col items-center justify-center gap-6 
             rounded-[24px] sm:rounded-[30px] lg:rounded-[40px]
+            transition-transform duration-300 hover:scale-105 hover:shadow-lg
           "
           style={{
             border: "2px solid transparent",

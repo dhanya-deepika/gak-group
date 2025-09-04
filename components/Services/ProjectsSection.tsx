@@ -13,11 +13,7 @@ export default function Projects() {
   const projects = [
     {
       name: "Financial District",
-      companies: [
-        "Sunshine Destino",
-        "Sumadhura Olympus",
-        "Raghava Cling",
-        "Axiom/TARANG by Sree Varasha",
+      companies: ["Sunshine Destino","4 BHK","Under-Construction","2800 - 3500 SFT.",
       ],
       image: "/images/project4.jpg",
       description:
