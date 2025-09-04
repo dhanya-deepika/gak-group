@@ -77,23 +77,23 @@ export default function Projects() {
   return (
     <section className="bg-white py-20 px-6 lg:px-16 overflow-x-hidden">
       {/* HEADER */}
-      <div className="max-w-7xl mx-auto flex justify-start items-center mb-18 gap-6">
-        <h2 className="font-sora text-[48px] font-normal text-black tracking-[-0.02em] leading-[100%] ml-25">
-          Projects
-        </h2>
-        <div
-          className="rounded-[40px] p-[1px] inline-block"
-          style={{
-            background: "linear-gradient(90deg, #B74254 0%, #231F51 100%)",
-          }}
-        >
-          <Link href="/projects">
-            <button className="px-6 py-2 bg-white rounded-[40px] text-black font-sora text-base font-normal">
-              View All Projects
-            </button>
-          </Link>
-        </div>
-      </div>
+      <div className="max-w-7xl mx-auto flex flex-wrap sm:flex-nowrap justify-start items-center mb-18 gap-4 sm:gap-6 px-4 sm:px-0">
+  <h2 className="font-sora text-2xl sm:text-[48px] font-normal text-black tracking-[-0.02em] leading-[100%] sm:ml-30">
+    Projects
+  </h2>
+  <div
+    className="rounded-[20px] sm:rounded-[40px] p-[1px] inline-block"
+    style={{
+      background: "linear-gradient(90deg, #B74254 0%, #231F51 100%)",
+    }}
+  >
+    <Link href="/projects">
+      <button className="px-3 py-1.5 sm:px-6 sm:py-2 bg-white rounded-[20px] sm:rounded-[40px] text-black font-sora text-sm sm:text-base font-normal">
+        View All Projects
+      </button>
+    </Link>
+  </div>
+</div>
 
       {/* CARDS */}
       <div className="flex justify-center">

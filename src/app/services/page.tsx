@@ -1,6 +1,6 @@
 import HeroSection from "../../../components/Services/HeroSection";
-import ServiceIcons from "../../../components/Services/ServiceIcons";
-import DetailedServices from "../../../components/Services/DetailedServices";
+import ServicesSection from "../../../components/Services/ServicesSection";
+// import DetailedServices from "../../../components/Services/DetailedServices";
 import ProjectsSection from "../../../components/Services/ProjectsSection";
 import BrandsSection from "../../../components/Services/BrandsSection";
 import Testimonials from "../../../components/Services/Testimonials";
@@ -10,8 +10,8 @@ export default function ServicesPage() {
   return (
     <div>
       <HeroSection />
-      <ServiceIcons />
-      <DetailedServices />
+      <ServicesSection />
+      {/* <DetailedServices /> */}
       <ProjectsSection />
       <BrandsSection />
       <Testimonials />

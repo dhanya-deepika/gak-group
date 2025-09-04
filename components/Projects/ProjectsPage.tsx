@@ -316,33 +316,36 @@ export default function ProjectsPage() {
         />
       </div>
 
-      <main className="flex-1 px-6 sm:px-6 lg:px-12 pt-20 pb-12 ">
+      <main className="flex-1 px-6 sm:px-6 lg:px-12 pt-10 pb-12 ">
         {/* Title */}
-        <h1 className="text-5xl sm:text-5xl font-light text-black text-left mb-12 mt-24 ml-58">
+        <h1
+          className="text-3xl sm:text-5xl font-light text-black mb-12 mt-24 
+             text-center sm:text-left sm:ml-60 "
+        >
           OUR PROJECTS
         </h1>
 
         {/* Wrapper with max-width same as cards */}
         <div className="max-w-[1100px] mx-auto">
-          {/* Search + Tags */}
           <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 mb-12">
+            {/* Search Box */}
             <div className="flex-1 max-w-[450px]">
-             <div
-  className="p-[1px] rounded-full border border-transparent"
-  style={{
-    borderImage: "linear-gradient(90deg,#B74254 0%,#231F51 100%) 1",
-  }}
->
-
-                <div className="flex items-center bg-white rounded-full px-3 h-[42px] gap-2">
+              <div
+                className="p-[1px] rounded-full border border-transparent"
+                style={{
+                  borderImage:
+                    "linear-gradient(90deg,#B74254 0%,#231F51 100%) 1",
+                }}
+              >
+                <div className="flex items-center bg-white rounded-full px-4 h-[46px] gap-2">
                   <input
                     type="text"
                     placeholder="3bhk, Moosapet, Pre-launch"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="flex-1 outline-none text-[15px] font-sora text-black rounded-full"
+                    className="flex-1 outline-none text-[15px] font-sora text-black bg-transparent"
                   />
-                  <button className="p-2 rounded-full bg-gradient-to-r from-[#B74254] to-[#231F51]">
+                  <button className="p-2 rounded-full bg-gradient-to-r from-[#B74254] to-[#231F51] flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 text-white"
@@ -367,7 +370,7 @@ export default function ProjectsPage() {
               {tags.map((tag, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 border border-[#ccc] rounded-[20px] text-sm text-black bg-white"
+                  className="px-3 py-1 border border-[#ccc] rounded-full text-sm text-black bg-white"
                 >
                   {tag}
                 </span>
