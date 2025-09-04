@@ -1,10 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html,
+body {
+  font-family: "Sora", sans-serif;
+}
 
 body {
   @apply font-sans text-gray-900;
+}
+html,
+body {
+  overflow-x: hidden;
 }
 
 :root {
