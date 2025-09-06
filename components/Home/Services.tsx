@@ -10,10 +10,18 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="flex flex-col items-center py-16 sm:py-20 bg-white">
+    <section className="relative flex flex-col items-center py-16 sm:py-20 bg-white overflow-hidden ">
+
+      {/* Decorative Lines in the Background */}
+      <img
+        src="/lines/vector(1).png"
+        alt="Decorative lines"
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[2000px] h-auto object-cover opacity-100 mt-20"
+      />
+
       {/* Heading */}
       <h2
-        className="text-[28px] sm:text-[36px] lg:text-[48px] font-normal text-black text-center"
+        className="text-[28px] sm:text-[36px] lg:text-[48px] font-normal text-black text-center relative z-10"
         style={{
           fontFamily: "Sora, sans-serif",
           lineHeight: "100%",
@@ -24,7 +32,7 @@ export default function ServicesSection() {
       </h2>
 
       {/* Services Boxes */}
-      <div className="mt-12 flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-25 items-center">
+      <div className="mt-12 flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-25 items-center relative z-10">
         {/* For Customers */}
         <div
           onClick={handleRedirect}

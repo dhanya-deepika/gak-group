@@ -2,7 +2,17 @@
 
 import React, { useState } from "react";
 
-export default function ProjectPopup({ project, onClose }: any) {
+type Project = {
+  name: string;
+  description: string;
+};
+
+type ProjectPopupProps = {
+  project: Project | null;
+  onClose: () => void;
+};
+
+export default function ProjectPopup({ project, onClose }: ProjectPopupProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,7 +22,9 @@ export default function ProjectPopup({ project, onClose }: any) {
 
   if (!project) return null;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     if (e.target.name === "message") {
       const words = e.target.value.split(/\s+/);
       if (words.length > 150) return;
@@ -58,7 +70,8 @@ export default function ProjectPopup({ project, onClose }: any) {
                 placeholder="abc"
                 pattern="[A-Za-z\s]+"
                 title="Name should only contain alphabets"
-                required className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-1 focus:ring-[#B74254]"
+                required
+                className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-1 focus:ring-[#B74254]"
               />
             </div>
 
@@ -73,27 +86,10 @@ export default function ProjectPopup({ project, onClose }: any) {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="abc@gmail.com"
-                required className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-1 focus:ring-[#B74254]"
-              />
-            </div>
-
-            {/* Phone Number
-            <div className="relative">
-              <label className="absolute -top-5 left-3 text-black text-sm font-medium bg-white px-1">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                name="number"
-                value={formData.number}
-                onChange={handleChange}
-                placeholder="+91XXXXXXXXXX"
-                pattern="[0-9]{10}"
-                title="Enter a valid 10-digit phone number"
                 required
                 className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-1 focus:ring-[#B74254]"
               />
-            </div> */}
+            </div>
 
             {/* Message */}
             <div className="relative">

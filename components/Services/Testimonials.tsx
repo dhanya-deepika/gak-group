@@ -8,11 +8,7 @@ export default function Testimonials() {
 
   const smallVideos = [
     { src: "/video/video2.jpg", alt: "testimonial small video", play: true },
-    {
-      src: "/video/video3.jpg",
-      alt: "testimonial property",
-      overlay: "Residential property in Sienna",
-    },
+    { src: "/video/video3.jpg", alt: "testimonial property", overlay: "Residential property in Sienna" },
     { src: "/video/video4.jpg", alt: "New video", play: true },
   ];
 
@@ -21,21 +17,29 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="flex justify-center py-16 bg-white">
-      {/* OUTER WRAPPER with gradient border */}
-      <div className="relative max-w-[1156px] w-full rounded-[40px] p-[2px] bg-gradient-to-tr from-[#231F51] via-[#B94255] to-transparent">
-        {/* INNER WHITE CARD */}
+    <section className="relative flex justify-center py-16 bg-white overflow-hidden">
+      
+      {/* Decorative Lines (Placed Behind Content) */}
+      <img
+        src="/lines/vector(1).png"
+        alt="Decorative lines"
+        className="absolute bottom-0 left-160 transform -translate-x-1/2 w-[2000px] h-auto object-cover opacity-100"
+      />
+
+      {/* Main Content (Z-index ensures it stays above lines) */}
+      <div className="relative max-w-[1156px] w-full rounded-[40px] p-[2px] bg-gradient-to-tr from-[#231F51] via-[#B94255] to-transparent z-10">
         <div className="flex flex-col p-8 gap-10 rounded-[40px] bg-white w-full h-full">
           
           {/* === HEADING === */}
-          <h2 className="text-3xl  text-black font-sora ml-5">
+          <h2 className="text-3xl text-black font-sora ml-5">
             Testimonials
           </h2>
 
           {/* === TOP ROW === */}
           <div className="flex flex-col md:flex-row gap-8">
             {/* LEFT SIDE – MAIN VIDEO */}
-            <div className="relative md:w-1/2 w-full aspect-[548/379] rounded-[40px] overflow-hidden cursor-pointer"
+            <div
+              className="relative md:w-1/2 w-full aspect-[548/379] rounded-[40px] overflow-hidden cursor-pointer"
               onClick={() => handlePlay(0)}
             >
               {playingIndex === 0 ? (
@@ -124,6 +128,7 @@ export default function Testimonials() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

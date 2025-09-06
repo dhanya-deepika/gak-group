@@ -38,14 +38,21 @@ export default function HeroSection() {
 
             <div className="relative flex flex-col items-center justify-center h-full text-center px-4 sm:px-8 lg:px-16">
               <h1
-                className="text-3xl sm:text-4xl md:text-4xl lg:text-[48px] font-semibold text-white leading-light tracking-light"
-                style={{ fontFamily: "Sora" }}
+                className="
+                  text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl
+                  font-bold mb-6
+                "
               >
-                Our Services
+               Our Services
+
               </h1>
+              
               <p
-                className="mt-4 text-base sm:text-lg md:text-xl lg:text-[20px] font-medium text-white"
-                style={{ fontFamily: "Sora" }}
+                className="
+                  text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-2xl
+                  max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl
+                  leading-relaxed mb-8
+                "
               >
                 Property Investment and Beyond
               </p>

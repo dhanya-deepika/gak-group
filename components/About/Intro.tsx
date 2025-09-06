@@ -3,7 +3,16 @@ import React from "react";
 
 export default function OurStory() {
   return (
-    <section className="py-20 bg-white flex justify-center px-4">
+    <section className="relative py-20 bg-white flex justify-center px-4 overflow-hidden">
+      
+      {/* Decorative Vector Image with custom rotation via inline style */}
+      <img
+        src="/lines/vector(1).png"
+        alt="Decorative Vector"
+        className="absolute top-0 right-0 w-[400px] h-auto opacity-30 pointer-events-none"
+        style={{ transform: "rotate(200deg)" }}
+      />
+
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <div>
@@ -12,7 +21,7 @@ export default function OurStory() {
             style={{
               fontFamily: "Sora, sans-serif",
               fontWeight: 400,
-              fontSize: "clamp(28px, 5vw, 48px)", // responsive font size
+              fontSize: "clamp(28px, 5vw, 48px)",
               lineHeight: "120%",
               letterSpacing: "-0.02em",
             }}
@@ -46,7 +55,7 @@ export default function OurStory() {
         {/* Image */}
         <div className="flex justify-center">
           <img
-            src="/ourstory.jpg" // replace with your image path
+            src="/ourstory.jpg"
             alt="Our Story"
             className="rounded-[40px] object-cover w-full max-w-[615px] h-auto"
           />

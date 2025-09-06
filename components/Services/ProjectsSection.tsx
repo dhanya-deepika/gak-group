@@ -1,37 +1,32 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
-
-  const [search, setSearch] = useState("");
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   const projects = [
     {
       name: "Financial District",
-      companies: ["Sunshine Destino","4 BHK","Under-Construction","2800 - 3500 SFT.",
-      ],
+      companies: ["Sunshine Destino","4 BHK","Under-Construction","2800 - 3500 SFT."],
       image: "/images/project4.jpg",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien. Morbi at quam id odio euismod bibendum. Pellentesque eget dui egestas, gravida erat et, auctor leo. Quisque consectetur nisi tortor, vitae suscipit est vestibulum at. Pellentesque vel est ac erat luctus auctor at in augue. Vestibulum eros ante, imperdiet at faucibus et, egestas sed quam. Fusce euismod dictum felis ut scelerisque. Cras dapibus, ex mattis consectetur scelerisque, urna dui cursus arcu, ac egestas arcu augue eget est. Duis enim nunc, consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien...",
     },
     {
       name: "Kollur",
       companies: ["Anvita Ivana Phase I", "Anvita Ivana Phase II"],
       image: "/images/project3.jpg",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien. Morbi at quam id odio euismod bibendum. Pellentesque eget dui egestas, gravida erat et, auctor leo. Quisque consectetur nisi tortor, vitae suscipit est vestibulum at. Pellentesque vel est ac erat luctus auctor at in augue. Vestibulum eros ante, imperdiet at faucibus et, egestas sed quam. Fusce euismod dictum felis ut scelerisque. Cras dapibus, ex mattis consectetur scelerisque, urna dui cursus arcu, ac egestas arcu augue eget est. Duis enim nunc, consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien...",
     },
     {
       name: "Manchiruvela",
       companies: ["Rajapushpa Infinia", "Vertex Bayleaf"],
       image: "/images/project6.jpg",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien. Morbi at quam id odio euismod bibendum. Pellentesque eget dui egestas, gravida erat et, auctor leo. Quisque consectetur nisi tortor, vitae suscipit est vestibulum at. Pellentesque vel est ac erat luctus auctor at in augue. Vestibulum eros ante, imperdiet at faucibus et, egestas sed quam. Fusce euismod dictum felis ut scelerisque. Cras dapibus, ex mattis consectetur scelerisque, urna dui cursus arcu, ac egestas arcu augue eget est. Duis enim nunc, consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien...",
     },
     {
       name: "Osman Sagar",
@@ -43,14 +38,14 @@ export default function Projects() {
       ],
       image: "/images/project4.jpg",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien. Morbi at quam id odio euismod bibendum. Pellentesque eget dui egestas, gravida erat et, auctor leo. Quisque consectetur nisi tortor, vitae suscipit est vestibulum at. Pellentesque vel est ac erat luctus auctor at in augue. Vestibulum eros ante, imperdiet at faucibus et, egestas sed quam. Fusce euismod dictum felis ut scelerisque. Cras dapibus, ex mattis consectetur scelerisque, urna dui cursus arcu, ac egestas arcu augue eget est. Duis enim nunc, consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien...",
     },
     {
       name: "Rajendra Nagar",
       companies: ["Godrej Regal Pavilion", "Ramky"],
       image: "/images/project3.jpg",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien. Morbi at quam id odio euismod bibendum. Pellentesque eget dui egestas, gravida erat et, auctor leo. Quisque consectetur nisi tortor, vitae suscipit est vestibulum at. Pellentesque vel est ac erat luctus auctor at in augue. Vestibulum eros ante, imperdiet at faucibus et, egestas sed quam. Fusce euismod dictum felis ut scelerisque. Cras dapibus, ex mattis consectetur scelerisque, urna dui cursus arcu, ac egestas arcu augue eget est. Duis enim nunc, consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien...",
     },
     {
       name: "Kokapet",
@@ -66,33 +61,41 @@ export default function Projects() {
       ],
       image: "/images/project4.jpg",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien. Morbi at quam id odio euismod bibendum. Pellentesque eget dui egestas, gravida erat et, auctor leo. Quisque consectetur nisi tortor, vitae suscipit est vestibulum at. Pellentesque vel est ac erat luctus auctor at in augue. Vestibulum eros ante, imperdiet at faucibus et, egestas sed quam. Fusce euismod dictum felis ut scelerisque. Cras dapibus, ex mattis consectetur scelerisque, urna dui cursus arcu, ac egestas arcu augue eget est. Duis enim nunc, consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien...",
     },
   ];
 
   return (
-    <section className="bg-white py-20 px-6 lg:px-16 overflow-x-hidden">
-      {/* HEADER */}
-      <div className="max-w-7xl mx-auto flex flex-wrap sm:flex-nowrap justify-start items-center mb-18 gap-4 sm:gap-6 px-4 sm:px-0">
-  <h2 className="font-sora text-2xl sm:text-[48px] font-normal text-black tracking-[-0.02em] leading-[100%] sm:ml-30">
-    Projects
-  </h2>
-  <div
-    className="rounded-[20px] sm:rounded-[40px] p-[1px] inline-block"
-    style={{
-      background: "linear-gradient(90deg, #B74254 0%, #231F51 100%)",
-    }}
-  >
-    <Link href="/projects">
-      <button className="px-3 py-1.5 sm:px-6 sm:py-2 bg-white rounded-[20px] sm:rounded-[40px] text-black font-sora text-sm sm:text-base font-normal">
-        View All Projects
-      </button>
-    </Link>
-  </div>
-</div>
+    <section className="relative bg-white py-20 px-6 lg:px-16 overflow-hidden">
 
-      {/* CARDS */}
-      <div className="flex justify-center">
+      {/* Decorative Lines */}
+      <img
+        src="/lines/vector(2).png"
+        alt="Decorative lines"
+        className="absolute bottom-0 left-180 transform -translate-x-1/2 w-[1500px] h-auto object-cover opacity-100"
+      />
+
+      {/* Header */}
+      <div className="max-w-7xl mx-auto flex flex-wrap sm:flex-nowrap justify-start items-center mb-18 gap-4 sm:gap-6 px-4 sm:px-0 relative z-10">
+        <h2 className="font-sora text-2xl sm:text-[48px] font-normal text-black tracking-[-0.02em] leading-[100%] sm:ml-30">
+          Projects
+        </h2>
+        <div
+          className="rounded-[20px] sm:rounded-[40px] p-[1px] inline-block"
+          style={{
+            background: "linear-gradient(90deg, #B74254 0%, #231F51 100%)",
+          }}
+        >
+          <Link href="/projects">
+            <button className="px-3 py-1.5 sm:px-6 sm:py-2 bg-white rounded-[20px] sm:rounded-[40px] text-black font-sora text-sm sm:text-base font-normal">
+              View All Projects
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Cards */}
+      <div className="flex justify-center relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 items-stretch">
           {projects.map((project, idx) => (
             <div
@@ -165,20 +168,20 @@ export default function Projects() {
                   </p>
                 </div>
 
-               {/* Short Description + Read More */}
-<div className="mt-3 text-sm text-gray-600 flex flex-col flex-grow">
-  <p className={expandedCard === idx ? "" : "line-clamp-4"}>
-    {project.description}
-  </p>
-  <button
-    onClick={() =>
-      setExpandedCard(expandedCard === idx ? null : idx)
-    }
-    className="self-start mt-1 text-sm font-medium text-[#231F51]"
-  >
-    {expandedCard === idx ? "Read Less" : "Read More"}
-  </button>
-</div>
+                {/* Short Description + Read More */}
+                <div className="mt-3 text-sm text-gray-600 flex flex-col flex-grow">
+                  <p className={expandedCard === idx ? "" : "line-clamp-4"}>
+                    {project.description}
+                  </p>
+                  <button
+                    onClick={() =>
+                      setExpandedCard(expandedCard === idx ? null : idx)
+                    }
+                    className="self-start mt-1 text-sm font-medium text-[#231F51]"
+                  >
+                    {expandedCard === idx ? "Read Less" : "Read More"}
+                  </button>
+                </div>
 
               </div>
             </div>

@@ -186,15 +186,22 @@ import React from "react";
 
 export default function GuidenceImage() {
   return (
-    <div className="flex justify-center py-12 px-4 bg-white">
+    <div className="relative flex justify-center py-12 px-4 bg-white overflow-hidden">
+      
+      {/* Decorative Lines in the Background */}
       <img
-        src="/Guidence.png" // replace with your image path
+        src="/lines/vector(3).png"
+        alt="Decorative lines"
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[1900px] h-auto object-cover opacity-100"
+      />
+
+      {/* Main Guidance Image */}
+      <img
+        src="/Guidence.png"
         alt="Guidence"
-        className="w-full max-w-[1127px] h-auto rounded-[40px] object-cover"
-        style={{
-          opacity: 1,
-        }}
+        className="relative w-full max-w-[1127px] h-auto rounded-[40px] object-cover"
       />
     </div>
   );
 }
+

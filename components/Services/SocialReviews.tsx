@@ -7,7 +7,7 @@ export default function SocialReviews() {
     {
       logo: "/logos/mimimail.png",
       platform: "Google reviews",
-      text: "IMauris interdum iaculis viverra. Suspendisse ac quam ornare, dictum ante erat. Aenean vestibulum tortor sem, non sagittis ex fringilla sit amet. Donec urna ornare mollis in vel sapien. Suspendisse luctus accumsan lectus in suscipit. Nunc non mi vitae nisi.",
+      text: "Mauris interdum iaculis viverra. Suspendisse ac quam ornare, dictum ante erat. Aenean vestibulum tortor sem, non sagittis ex fringilla sit amet. Donec urna ornare mollis in vel sapien.",
       author: "Sarah Miller",
     },
     {
@@ -24,14 +24,14 @@ export default function SocialReviews() {
   const prev = () => setActive((active - 1 + reviews.length) % reviews.length);
 
   return (
-    <section className="bg-white py-20 flex flex-col items-center px-4">
+    <section className="bg-white py-16 sm:py-20 flex flex-col items-center px-4 sm:px-8">
       {/* Heading */}
       <h2
-        className="font-normal text-black mb-12 text-center"
+        className="font-normal text-black mb-8 sm:mb-12 text-center sm:text-left lg:ml-165 w-full"
         style={{
           fontFamily: "Sora",
-          fontSize: "clamp(28px, 5vw, 48px)",
-          lineHeight: "100%",
+          fontSize: "clamp(24px, 5vw, 48px)",
+          lineHeight: "110%",
           letterSpacing: "-0.02em",
         }}
       >
@@ -39,49 +39,48 @@ export default function SocialReviews() {
       </h2>
 
       {/* Content wrapper */}
-      <div className="relative flex items-center justify-center w-full max-w-[1100px]">
+      <div className="relative flex items-center justify-center w-full max-w-[1000px]">
         {/* Left arrow */}
         <button
           onClick={prev}
           aria-label="Previous"
-          className="absolute -left-6 sm:-left-10 text-black text-lg hover:scale-110 transition"
+          className="absolute -left-4 sm:-left-8 text-black text-base sm:text-lg hover:scale-110 transition"
         >
           ◀
         </button>
 
-        {/* Review Content (no card) */}
-        <div className="flex flex-col sm:flex-row w-full max-w-[1083px] min-h-[256px]">
+        {/* Review Content */}
+        <div className="flex flex-col sm:flex-row w-full max-w-[950px] min-h-[220px] sm:min-h-[256px]">
           {/* Logo side */}
-          <div
-            className="flex items-center justify-center sm:w-[256px] w-full h-[200px] sm:h-[256px] bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl shadow-md">
+          <div className="flex items-center justify-center sm:w-[220px] w-full h-[160px] sm:h-[240px] bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl sm:rounded-3xl shadow-md">
             <Image
               src={reviews[active].logo}
               alt="brand logo"
-              width={128}
-              height={128}
+              width={100}
+              height={100}
               className="object-contain rounded-xl"
             />
           </div>
 
           {/* Text side */}
-          <div className="flex flex-col justify-center px-6 py-6 text-black sm:w-[795px] w-full">
+          <div className="flex flex-col justify-center px-4 sm:px-6 py-4 sm:py-6 text-black sm:w-[700px] w-full">
             <p
-              className="text-sm mb-2"
+              className="text-xs sm:text-sm mb-2"
               style={{ fontFamily: "Sora", color: "#7a7a5c" }}
             >
               {reviews[active].platform}
             </p>
             <p
-              className="text-base leading-snug mb-2"
+              className="text-sm sm:text-base leading-snug mb-2"
               style={{
                 fontFamily: "Sora",
-                maxWidth: "795px",
+                maxWidth: "700px",
               }}
             >
               {reviews[active].text}
             </p>
             <p
-              className="text-sm"
+              className="text-xs sm:text-sm"
               style={{ fontFamily: "Sora", color: "#7a7a5c" }}
             >
               {reviews[active].author}
@@ -93,19 +92,19 @@ export default function SocialReviews() {
         <button
           onClick={next}
           aria-label="Next"
-          className="absolute -right-6 sm:-right-10 text-black text-lg hover:scale-110 transition"
+          className="absolute -right-4 sm:-right-8 text-black text-base sm:text-lg hover:scale-110 transition"
         >
           ▶
         </button>
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex gap-3 mt-8">
+      <div className="flex gap-3 mt-6 sm:mt-8">
         {reviews.map((_, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
               active === i ? "bg-[#231F51]" : "bg-white"
             }`}
             style={{

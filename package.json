@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "tailwind:init": "tailwindcss init -p",
-    "build": "next build",
+    "build": "next build --no-lint",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint --max-warnings=0"
   },
   "dependencies": {
     "lucide-react": "^0.542.0",

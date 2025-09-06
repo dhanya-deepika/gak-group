@@ -96,7 +96,6 @@
 //   );
 // }
 
-
 "use client";
 
 import { useRef } from "react";
@@ -126,7 +125,10 @@ export default function BrandsSection() {
   };
 
   // your 26 logos
-  const brands = Array.from({ length: 27 }, (_, i) => `/projectlogos/logo${i + 1}.jpg`);
+  const brands = Array.from(
+    { length: 27 },
+    (_, i) => `/projectlogos/logo${i + 1}.jpg`
+  );
 
   return (
     <section className="relative py-12 bg-white overflow-visible">
@@ -167,23 +169,26 @@ export default function BrandsSection() {
 
         {/* Scroll container */}
         <div
-          ref={scrollerRef}
-          className="
-            flex gap-8 sm:gap-10 md:gap-12 lg:gap-16 
-            overflow-hidden px-2
-            w-full max-w-[1100px]
-          "
-        >
+  ref={scrollerRef}
+  className="
+    flex gap-8 sm:gap-10 md:gap-12 lg:gap-16 
+    overflow-hidden px-2
+    w-full max-w-[1100px] 
+    sm:w-auto
+  "
+>
+
+
           {brands.map((logo, i) => (
             <img
               key={i}
               src={logo}
               alt={`brand ${i + 1}`}
               className="
-                h-24 sm:h-14 md:h-26 lg:h-20 
-                w-24 sm:w-28 md:w-32 lg:w-40 
-                object-contain shrink-0
-              "
+    w-full sm:w-28 md:w-32 lg:w-40 
+    h-24 sm:h-14 md:h-26 lg:h-20 
+    object-contain shrink-0
+  "
             />
           ))}
         </div>

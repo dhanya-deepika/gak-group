@@ -4,11 +4,19 @@ import { useState } from "react";
 import Image from "next/image";
 import ProjectPopup from "../../components/ProjectPopup";
 
-export default function ProjectsPage() {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
-  const [search, setSearch] = useState("");
+// ✅ Move type definition outside the component
+export type Project = {
+  name: string;
+  companies: string[];
+  image: string;
+  description: string;
+};
 
+export default function ProjectsPage() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [search, setSearch] = useState("");
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
 
   const projects = [
     {
@@ -135,75 +143,59 @@ export default function ProjectsPage() {
       )
   );
 
-  const tags = [
-    "Moosapet",
-    "Sunshine Destino",
-    "4 BHK",
-    "Pre Launch",
-    ">1680 sqft",
-    "Label",
-    "Label",
-  ];
+  const tags = ["Moosapet", "Sunshine Destino", "4 BHK", "Pre Launch", ">1680 sqft", "Label", "Label"];
 
   return (
     <div className="relative min-h-screen flex flex-col bg-white">
-
-      <main className="flex-1 px-6 sm:px-6 lg:px-12 pt-10 pb-12 ">
+      
+      <main
+        className="relative flex-1 px-6 sm:px-6 lg:px-12 pt-10 pb-12 z-10"
+        style={{
+          backgroundImage: "url(/lines/projectline.png)",
+          backgroundRepeat: "no-repeat",
+          // Push image down a bit and inset left/right by shrinking width
+          backgroundPosition: "center 32px",
+          backgroundSize: "calc(100% - 64px) auto",
+        }}
+      >
         {/* Title */}
-        <h1
-          className="text-3xl sm:text-5xl font-light text-black mb-12 mt-24 
-             text-center sm:text-left sm:ml-60 "
-        >
+        <h1 className="text-3xl sm:text-5xl font-light text-black mb-12 mt-24 text-center sm:text-left sm:ml-60">
           OUR PROJECTS
         </h1>
 
-        {/* Wrapper with max-width same as cards */}
+        {/* Wrapper */}
         <div className="max-w-[1100px] mx-auto">
+          {/* Search + Tags */}
           <div className="flex flex-col md:flex-row md:items-center gap-4 mb-12">
-  {/* Search Box */}
-  <div className="flex-1 w-full md:max-w-[450px]">
-    <div className="rounded-full p-[2px] bg-gradient-to-r from-[#B74254] to-[#231F51]">
-      <div className="flex items-center bg-white rounded-full px-4 h-[46px] gap-2">
-        <input
-          type="text"
-          placeholder="3bhk, Moosapet, Pre-launch"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 outline-none text-[15px] font-sora text-black bg-transparent"
-        />
-        <button className="p-2 rounded-full bg-gradient-to-r from-[#B74254] to-[#231F51] flex items-center justify-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
+            {/* Search Box */}
+            <div className="flex-1 w-full md:max-w-[450px]">
+              <div className="rounded-full p-[2px] bg-gradient-to-r from-[#B74254] to-[#231F51]">
+                <div className="flex items-center bg-white rounded-full px-4 h-[46px] gap-2">
+                  <input
+                    type="text"
+                    placeholder="3bhk, Moosapet, Pre-launch"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="flex-1 outline-none text-[15px] font-sora text-black bg-transparent"
+                  />
+                  <button className="p-2 rounded-full bg-gradient-to-r from-[#B74254] to-[#231F51] flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
 
-  {/* Tags */}
-  <div className="flex flex-wrap gap-2 w-full md:w-auto">
-    {tags.map((tag, i) => (
-      <span
-        key={i}
-        className="px-3 py-1 border border-[#ccc] rounded-full text-sm text-black bg-white"
-      >
-        {tag}
-      </span>
-    ))}
-  </div>
-</div>
-
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 w-full md:w-auto">
+              {tags.map((tag, i) => (
+                <span key={i} className="px-3 py-1 border border-[#ccc] rounded-full text-sm text-black bg-white">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
 
           {/* Cards Grid */}
           <div className="flex justify-center">
@@ -212,84 +204,49 @@ export default function ProjectsPage() {
                 <div
                   key={index}
                   className="cursor-pointer rounded-[40px] p-[1px] w-[340px] flex flex-col"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, #B74254 0%, #231F51 100%)",
-                  }}
+                  style={{ background: "linear-gradient(90deg, #B74254 0%, #231F51 100%)" }}
+                  // ✅ Open popup when clicked
+                  onClick={() => setSelectedProject(project)}
                 >
                   <div className="bg-white rounded-[40px] w-full h-full px-5 py-6 flex flex-col">
                     {/* Image */}
-                    <div
-                      className="relative rounded-[40px] overflow-hidden mx-auto"
-                      style={{
-                        width: "297px",
-                        height: "367px",
-                      }}
-                    >
-                      <Image
-                        src={project.image}
-                        alt={project.name}
-                        fill
-                        className="object-cover rounded-[40px]"
-                      />
+                    <div className="relative rounded-[40px] overflow-hidden mx-auto" style={{ width: "297px", height: "367px" }}>
+                      <Image src={project.image} alt={project.name} fill className="object-cover rounded-[40px]" />
                     </div>
 
-                    {/* Title / Company */}
+                    {/* Title */}
                     <h3 className="font-source-sans text-[20px] font-semibold underline tracking-[-0.02em] leading-[100%] text-black mt-4">
                       {project.companies[0]}
                     </h3>
 
-                    {/* Icons Row */}
+                    {/* Info */}
                     <div className="space-y-2 text-[15px] text-black mt-2">
                       <p className="flex items-center gap-2">
-                        <Image
-                          src="/icons/location.png"
-                          alt="location"
-                          width={20}
-                          height={20}
-                        />
+                        <Image src="/icons/location.png" alt="location" width={20} height={20} />
                         {project.name}
                       </p>
                       <p className="flex items-center gap-2">
-                        <Image
-                          src="/icons/bed.png"
-                          alt="bhk"
-                          width={20}
-                          height={20}
-                        />
+                        <Image src="/icons/bed.png" alt="bhk" width={20} height={20} />
                         3, 3.5, 4 & 4.5 BHK
                       </p>
                       <p className="flex items-center gap-2">
-                        <Image
-                          src="/icons/time.png"
-                          alt="launch"
-                          width={20}
-                          height={20}
-                        />
+                        <Image src="/icons/time.png" alt="launch" width={20} height={20} />
                         Pre Launch
                       </p>
                       <p className="flex items-center gap-2">
-                        <Image
-                          src="/icons/slide.png"
-                          alt="area"
-                          width={20}
-                          height={20}
-                        />
+                        <Image src="/icons/slide.png" alt="area" width={20} height={20} />
                         1680 sqft - 4550 sqft
                       </p>
                     </div>
 
-                    {/* Short Description + Read More */}
+                    {/* Short Description */}
                     <div className="mt-3 text-sm text-gray-600 flex flex-col flex-grow">
-                      <p
-                        className={expandedCard === index ? "" : "line-clamp-4"}
-                      >
-                        {project.description}
-                      </p>
+                      <p className={expandedCard === index ? "" : "line-clamp-4"}>{project.description}</p>
                       <button
-                        onClick={() =>
-                          setExpandedCard(expandedCard === index ? null : index)
-                        }
+                        onClick={(e) => {
+                          e.stopPropagation(); // prevent opening popup
+                          setExpandedCard(expandedCard === index ? null : index);
+                        }}
                         className="self-start mt-1 text-sm font-medium text-[#231F51]"
                       >
                         {expandedCard === index ? "Read Less" : "Read More"}
@@ -302,6 +259,11 @@ export default function ProjectsPage() {
           </div>
         </div>
       </main>
+
+      {/* ✅ Show popup */}
+      {selectedProject && (
+        <ProjectPopup project={selectedProject} onClose={() => setSelectedProject(null)} />
+      )}
     </div>
   );
 }
