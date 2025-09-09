@@ -7,7 +7,6 @@ export default function HeroSection() {
     "/ourservices/our2.jpg",
     "/ourservices/our3.jpg",
     "/ourservices/our4.jpg",
-    
   ];
 
   const [current, setCurrent] = useState(0);
@@ -21,32 +20,38 @@ export default function HeroSection() {
   }, [slides.length]);
 
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden">
+    <section
+      id="hero"
+      className="relative h-[60vh] sm:h-[80vh] md:h-screen w-full overflow-hidden"
+    >
       {/* Slides */}
       <div
         className="flex h-full w-full transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((img, i) => (
-          <div
-            key={i}
-            className="h-screen w-full flex-shrink-0 bg-cover bg-center relative"
-            style={{ backgroundImage: `url(${img})` }}
-          >
+          <div key={i} className="h-full w-full flex-shrink-0 relative">
+            {/* Image fills entire slide area */}
+            <img
+              src={img}
+              alt={`Slide ${i + 1}`}
+              className="absolute top-0 left-0 w-full h-full object-cover"
+            />
+
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/40" />
 
-            <div className="relative flex flex-col items-center justify-center h-full text-center px-4 sm:px-8 lg:px-16">
+            {/* Content */}
+            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-12">
               <h1
                 className="
                   text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl
                   font-bold mb-6
                 "
               >
-               Our Services
-
+                Our Services
               </h1>
-              
+
               <p
                 className="
                   text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-2xl

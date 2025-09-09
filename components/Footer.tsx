@@ -38,10 +38,11 @@ export default function FooterSection() {
       <div className="max-w-7xl mx-auto">
         {/* FORM + TEXT */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+
           {/* Contact Form */}
-          <div className="w-full max-w-md mx-auto p-[2px] rounded-2xl bg-gradient-to-r from-[#B74254] to-[#231F51]">
+          <div className="w-full max-w-md mx-auto p-[2px] rounded-[40px] bg-gradient-to-r from-[#B74254] to-[#231F51]">
             <form
-              className="bg-white rounded-2xl p-8 flex flex-col gap-6 my"
+              className="bg-white rounded-[40px] p-8 flex flex-col gap-6"
               onSubmit={handleSubmit}
             >
               {/* Name */}
@@ -80,7 +81,7 @@ export default function FooterSection() {
 
               {/* Message */}
               <div className="relative mt-5 text-black">
-                <label className="absolute -top-7 left-3 text-black text-sm text-black font-medium bg-white px-1">
+                <label className="absolute -top-7 left-3 text-black text-sm font-medium bg-white px-1">
                   Message
                 </label>
                 <textarea
@@ -91,7 +92,6 @@ export default function FooterSection() {
                   rows={5}
                   className="w-full px-4 py-3 border rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-[#B74254]"
                 />
-      
               </div>
 
               {/* Gradient border submit button */}
@@ -105,20 +105,25 @@ export default function FooterSection() {
               </div>
             </form>
           </div>
+{/* Text Block */}
+<div className="order-1 md:order-2 w-full">
+  <h3
+    className="
+      text-gray-900 font-sora font-light leading-tight
+      bg-white p-4 sm:p-0
+      rounded-tl-[40px] sm:rounded-none
+    "
+    style={{
+      fontSize: "clamp(28px, 5vw, 48px)",
+      letterSpacing: "-0.02em",
+    }}
+  >
+    LET US GUIDE YOU<br className="hidden md:block" />
+    TO GROWTH
+  </h3>
+</div>
 
-          {/* Text */}
-          <div className="text-center md:text-left">
-            <h3
-              className="text-gray-900 font-sora font-light leading-tight"
-              style={{
-                fontSize: "clamp(28px, 5vw, 48px)",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              LET US GUIDE <br className="hidden md:block" />
-              YOU TO GROWTH
-            </h3>
-          </div>
+
         </div>
 
         {/* FOOTER BOTTOM */}

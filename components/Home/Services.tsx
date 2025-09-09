@@ -10,13 +10,12 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="relative flex flex-col items-center py-16 sm:py-20 bg-white overflow-hidden ">
-
+    <section className="relative z-10 isolate flex flex-col items-center py-16 sm:py-20 bg-white overflow-visible">
       {/* Decorative Lines in the Background */}
       <img
-        src="/lines/vector(1).png"
+        src="/lines/Vector(1).png" // note: case sensitive on Linux servers
         alt="Decorative lines"
-        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[2000px] h-auto object-cover opacity-100 mt-20"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[2000px] h-auto object-cover opacity-100 mt-20 pointer-events-none z-0"
       />
 
       {/* Heading */}
@@ -32,16 +31,17 @@ export default function ServicesSection() {
       </h2>
 
       {/* Services Boxes */}
-      <div className="mt-12 flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-25 items-center relative z-10">
+      <div className="mt-12 grid grid-cols-2 gap-7 sm:gap-6 lg:gap-15 items-stretch relative z-10 px-4 w-full max-w-[900px]">
         {/* For Customers */}
         <div
           onClick={handleRedirect}
           className="
             cursor-pointer
-            w-[250px] h-[260px] sm:w-[300px] sm:h-[320px] lg:w-[371px] lg:h-[377px]
-            flex flex-col items-center justify-center gap-6 
+            w-full h-[200px] sm:h-[371px] lg:h-[377px]
+            flex flex-col items-center justify-center gap-5
             rounded-[24px] sm:rounded-[30px] lg:rounded-[40px]
-            transition-transform duration-300 hover:scale-105 hover:shadow-lg
+            transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:z-20
+            transform-gpu p-4
           "
           style={{
             border: "2px solid transparent",
@@ -52,12 +52,12 @@ export default function ServicesSection() {
           <Image
             src="/logos/Customer.png"
             alt="Customer Icon"
-            width={60}
-            height={90}
-            className="sm:w-[70px] sm:h-[100px] lg:w-[74px] lg:h-[121px]"
+            width={74}
+            height={121}
+            className="w-[64px] h-[88px] sm:w-[80px] sm:h-[104px] lg:w-[70px] lg:h-[121px]"
           />
           <p
-            className="text-[14px] sm:text-[18px] lg:text-[20px] font-normal text-black"
+            className="text-[14px] sm:text-[16px] lg:text-[18px] font-normal text-black"
             style={{
               fontFamily: "Sora, sans-serif",
               lineHeight: "100%",
@@ -68,15 +68,18 @@ export default function ServicesSection() {
           </p>
         </div>
 
+        
+
         {/* For Developers */}
         <div
           onClick={handleRedirect}
           className="
             cursor-pointer
-            w-[250px] h-[260px] sm:w-[300px] sm:h-[320px] lg:w-[371px] lg:h-[377px]
-            flex flex-col items-center justify-center gap-6 
+            w-full h-[200px] sm:h-[371px] lg:h-[377px]
+            flex flex-col items-center justify-center gap-5
             rounded-[24px] sm:rounded-[30px] lg:rounded-[40px]
-            transition-transform duration-300 hover:scale-105 hover:shadow-lg
+            transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:z-20
+            transform-gpu p-4
           "
           style={{
             border: "2px solid transparent",
@@ -87,12 +90,12 @@ export default function ServicesSection() {
           <Image
             src="/logos/developer.png"
             alt="Developer Icon"
-            width={60}
-            height={90}
-            className="sm:w-[70px] sm:h-[100px] lg:w-[74px] lg:h-[121px]"
+            width={64}
+            height={88}
+            className="w-[64px] h-[88px] sm:w-[80px] sm:h-[104px] lg:w-[70px] lg:h-[121px]"
           />
           <p
-            className="text-[14px] sm:text-[18px] lg:text-[20px] font-normal text-black"
+            className="text-[14px] sm:text-[16px] lg:text-[18px] font-normal text-black"
             style={{
               fontFamily: "Sora, sans-serif",
               lineHeight: "100%",

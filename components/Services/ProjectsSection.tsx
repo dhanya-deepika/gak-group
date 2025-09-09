@@ -9,7 +9,12 @@ export default function Projects() {
   const projects = [
     {
       name: "Financial District",
-      companies: ["Sunshine Destino","4 BHK","Under-Construction","2800 - 3500 SFT."],
+      companies: [
+        "Sunshine Destino",
+        "4 BHK",
+        "Under-Construction",
+        "2800 - 3500 SFT.",
+      ],
       image: "/images/project4.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis metus sapien...",
@@ -67,7 +72,6 @@ export default function Projects() {
 
   return (
     <section className="relative bg-white py-20 px-6 lg:px-16 overflow-hidden">
-
       {/* Decorative Lines */}
       <img
         src="/lines/vector(2).png"
@@ -102,19 +106,14 @@ export default function Projects() {
               key={idx}
               className="cursor-pointer rounded-[40px] p-[1px] w-[340px] flex flex-col"
               style={{
-                background: "linear-gradient(90deg, #E88796 0%, #8C82C0 100%)",
+                background: "linear-gradient(90deg, #B74254 0%, #231F51 100%)",
               }}
             >
               {/* Inner white box */}
-              <div className="bg-white rounded-[40px] w-full h-full px-5 py-6 flex flex-col">
+              <div className="bg-white rounded-[40px] w-full h-full p-6 flex flex-col">
                 {/* Image */}
-                <div
-                  className="relative rounded-[40px] overflow-hidden mx-auto"
-                  style={{
-                    width: "297px",
-                    height: "367px",
-                  }}
-                >
+
+                <div className="relative w-full rounded-[40px] overflow-hidden aspect-[4/5]">
                   <Image
                     src={project.image}
                     alt={project.name}
@@ -182,7 +181,6 @@ export default function Projects() {
                     {expandedCard === idx ? "Read Less" : "Read More"}
                   </button>
                 </div>
-
               </div>
             </div>
           ))}

@@ -1,7 +1,34 @@
 const stats = [
-  { number: "10+", label: <>Years of<br />Service</> },
-  { number: "400+", label: <>Satisfied<br />Customers</> },
-  { number: "2500+", label: <>Channel<br />Partners</> },
+  {
+    number: "10+",
+    label: (
+      <>
+        Years of
+        <br />
+        Service
+      </>
+    ),
+  },
+  {
+    number: "400+",
+    label: ( 
+      <>
+        Satisfied
+        <br />
+        Customers
+      </>
+    ),
+  },
+  {
+    number: "2500+",
+    label: (
+      <>
+        Channel
+        <br />
+        Partners
+      </>
+    ),
+  },
   { number: "50+", label: "Projects" },
 ];
 
@@ -19,7 +46,7 @@ export default function Stats() {
 
       {/* Outer gradient wrapper */}
       <div
-        className="p-[1px] sm:p-[2px] rounded-[40px] w-[90%] max-w-[1140px] relative z-10"
+        className="p-[1px] sm:p-[2px] rounded-[40px] w-[90%] max-w-[1110px] relative z-10 lg:mb-15"
         style={{
           background:
             "linear-gradient(to bottom right, #FFFFFF 0%, #B74254 20%, #231F51 80%, #FFFFFF 100%)",

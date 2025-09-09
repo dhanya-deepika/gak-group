@@ -104,7 +104,7 @@ export default function Team() {
 
       {/* Outer Gradient Border */}
       <div
-        className="rounded-[32px] md:rounded-[40px] p-[3px] md:p-[4px] w-full max-w-[1200px] z-10"
+        className="rounded-[32px] md:rounded-[40px] p-[2px] md:p-[2px] w-full max-w-[1200px] z-10"
         style={{
           background:
             "linear-gradient(319.06deg, rgba(185, 66, 85, 0) 7.55%, #B94255 52.45%, #231F51 90.82%)",

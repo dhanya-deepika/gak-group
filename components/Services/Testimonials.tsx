@@ -88,46 +88,65 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* === BOTTOM ROW – CAROUSEL === */}
-          <div className="overflow-x-auto w-full flex gap-4">
-            {smallVideos.map((video, idx) => (
-              <div
-                key={idx}
-                className="relative w-[326px] flex-shrink-0 aspect-[326/215] rounded-[30px] overflow-hidden cursor-pointer"
-                onClick={() => handlePlay(idx + 1)} // +1 because main video is 0
-              >
-                {playingIndex === idx + 1 ? (
-                  <video
-                    src={`/video/video${idx + 2}.mp4`}
-                    controls
-                    autoPlay
-                    className="w-full h-full object-cover rounded-[30px]"
-                  />
-                ) : (
-                  <>
-                    <img
-                      src={video.src}
-                      alt={video.alt}
-                      className="w-full h-full object-cover"
-                    />
-                    {video.overlay ? (
-                      <div className="absolute inset-0 bg-black/40 flex items-end p-4">
-                        <p className="text-white font-semibold text-sm">
-                          {video.overlay}
-                        </p>
-                      </div>
-                    ) : video.play ? (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-md">
-                          <Play className="w-6 h-6 text-black" fill="black" />
-                        </div>
-                      </div>
-                    ) : null}
-                  </>
-                )}
+         {/* === BOTTOM ROW – CAROUSEL === */}
+<div className="overflow-x-auto w-full flex gap-4">
+  {smallVideos.map((video, idx) => {
+    const isStaticImage = !!video.overlay; // Only video3 has overlay, so it's static
+    return (
+      <div
+        key={idx}
+        className="relative w-[326px] flex-shrink-0 aspect-[326/215] rounded-[30px] overflow-hidden cursor-pointer"
+        onClick={() => {
+          if (isStaticImage) {
+            // Toggle overlay text visibility
+            setPlayingIndex(playingIndex === idx + 1 ? null : idx + 1);
+          } else {
+            handlePlay(idx + 1);
+          }
+        }}
+      >
+        {isStaticImage ? (
+          <>
+            <img
+              src={video.src}
+              alt={video.alt}
+              className="w-full h-full object-cover rounded-[30px]"
+            />
+            {playingIndex === idx + 1 && (
+              <div className="absolute inset-0 bg-black/40 flex items-end p-4 rounded-[30px]">
+                <p className="text-white font-semibold text-sm">
+                  {video.overlay}
+                </p>
               </div>
-            ))}
-          </div>
+            )}
+          </>
+        ) : playingIndex === idx + 1 ? (
+          <video
+            src={`/video/video${idx + 2}.mp4`}
+            controls
+            autoPlay
+            className="w-full h-full object-cover rounded-[30px]"
+          />
+        ) : (
+          <>
+            <img
+              src={video.src}
+              alt={video.alt}
+              className="w-full h-full object-cover rounded-[30px]"
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-md">
+                <Play className="w-6 h-6 text-black" fill="black" />
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    );
+  })}
+</div>
+
+
 
         </div>
       </div>
