@@ -89,8 +89,8 @@ export default function ServicesSection() {
             <Image
               src={service.icon}
               alt={service.title}
-              width={106}
-              height={127}
+              width={70}
+              height={88}
               className="w-106px h-127px"
             />
             <div>
@@ -144,8 +144,8 @@ export default function ServicesSection() {
             <Image
               src={service.icon}
               alt={service.title}
-              width={106}
-              height={127}
+              width={70}
+              height={88}
               className="w-106px h-127px"
             />
             <div>

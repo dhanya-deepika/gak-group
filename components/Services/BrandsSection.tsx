@@ -67,30 +67,34 @@ export default function BrandsSection() {
           onClick={() => scrollByLogos("left")}
           className="select-none text-black hover:opacity-80 transition-opacity hover:scale-110"
         >
-          <span className="text-[24px] leading-none align-middle">◀</span>
+          <span className="text-[20px] leading-none align-middle">◀</span>
         </button>
 
         {/* Scrollable logos container (both small and large screens) */}
-        <div
-          ref={scrollerRef}
-          className="
-            flex gap-6 overflow-x-auto no-scrollbar
-            px-2
-            w-full max-w-[1100px]
-          "
-        >
-          {brands.map((logo, i) => (
-            <img
-              key={i}
-              src={logo}
-              alt={`brand ${i + 1}`}
-              className="
-                w-[160px] h-[100px] sm:w-[180px] sm:h-[120px]
-                object-contain shrink-0
-              "
-            />
-          ))}
-        </div>
+        {/* Scroll container */}
+<div
+  ref={scrollerRef}
+  className="
+    flex gap-8 sm:gap-10 md:gap-12 lg:gap-16 
+    overflow-hidden px-2
+    w-full max-w-[1100px] 
+    sm:w-auto
+  "
+>
+  {brands.map((logo, i) => (
+    <img
+      key={i}
+      src={logo}
+      alt={`brand ${i + 1}`}
+      className="
+        w-32 sm:w-40 md:w-48 lg:w-56 
+        h-20 sm:h-24 md:h-28 lg:h-32 
+        object-contain shrink-0
+      "
+    />
+  ))}
+</div>
+
 
         {/* Right Arrow */}
         <button
@@ -98,7 +102,7 @@ export default function BrandsSection() {
           onClick={() => scrollByLogos("right")}
           className="select-none text-black hover:opacity-80 transition-opacity hover:scale-110"
         >
-          <span className="text-[24px] leading-none align-middle">▶</span>
+          <span className="text-[20px] leading-none align-middle">▶</span>
         </button>
       </div>
     </section>

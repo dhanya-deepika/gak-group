@@ -12,11 +12,12 @@ export default function BrandsSection() {
       ? (el.firstElementChild as HTMLElement).offsetWidth + 32 // width + gap
       : 0;
 
+    // check viewport width → decide how many to scroll
     const screenWidth = window.innerWidth;
-    let visible = 5;
-    if (screenWidth < 640) visible = 3;
-    else if (screenWidth < 768) visible = 3;
-    else if (screenWidth < 1024) visible = 4;
+    let visible = 5; // default large
+    if (screenWidth < 640) visible = 1;
+    else if (screenWidth < 768) visible = 2;
+    else if (screenWidth < 1024) visible = 3;
 
     const amount = logoWidth * visible;
     el.scrollBy({
@@ -25,6 +26,7 @@ export default function BrandsSection() {
     });
   };
 
+  // your 26 logos
   const brands = Array.from(
     { length: 27 },
     (_, i) => `/projectlogos/logo${i + 1}.jpg`
@@ -45,58 +47,45 @@ export default function BrandsSection() {
       <div className="mx-auto w-full flex justify-start px-6 md:ml-15">
         <h2
           className="text-center font-normal mb-8 w-[806.17px] max-w-[90%] text-black"
-          style={{
-            fontFamily: "Sora",
-            fontSize: "30px",
-            lineHeight: "100%",
-            letterSpacing: "-0.02em",
-          }}
+          style={{fontFamily: "Sora",fontSize: "30px",lineHeight: "100%",letterSpacing: "-0.02em",}}
         >
           OUR TRUSTED CLIENTS
         </h2>
       </div>
 
-      {/* Logos section */}
-      <div className="flex items-center justify-center gap-4 sm:gap-6">
-
-        {/* Left Arrow */}
+      {/* Logos row with arrows */}
+      <div className="flex items-center justify-center  gap-6">
+        {/* Left arrow */}
         <button
           aria-label="Scroll left"
           onClick={() => scrollByLogos("left")}
-          className="select-none text-black hover:opacity-80 transition-opacity hover:scale-110"
+          className="select-none text-black hover:opacity-80 transition-opacity"
         >
-          <span className="text-[24px] leading-none align-middle">◀</span>
+          <span className="text-[20px] leading-none align-middle">◀</span>
         </button>
 
-        {/* Scrollable logos container (both small and large screens) */}
+        {/* Scroll container */}
         <div
           ref={scrollerRef}
-          className="
-            flex gap-6 overflow-x-auto no-scrollbar
-            px-2
-            w-full max-w-[1100px]
-          "
+          className="flex gap-8 sm:gap-10 md:gap-12 lg:gap-16 overflow-hidden px-2 w-full max-w-[1100px] sm:w-auto"
         >
           {brands.map((logo, i) => (
             <img
               key={i}
               src={logo}
               alt={`brand ${i + 1}`}
-              className="
-                w-[160px] h-[100px] sm:w-[180px] sm:h-[120px]
-                object-contain shrink-0
-              "
+              className="w-32 sm:w-40 md:w-48 lg:w-58 h-20 sm:h-24 md:h-28 lg:h-35 object-contain shrink-0"
             />
           ))}
         </div>
 
-        {/* Right Arrow */}
+        {/* Right arrow */}
         <button
           aria-label="Scroll right"
           onClick={() => scrollByLogos("right")}
-          className="select-none text-black hover:opacity-80 transition-opacity hover:scale-110"
+          className="select-none text-black hover:opacity-80 transition-opacity"
         >
-          <span className="text-[24px] leading-none align-middle">▶</span>
+          <span className="text-[20px] leading-none align-middle">▶</span>
         </button>
       </div>
     </section>
