@@ -113,7 +113,7 @@ export default function Team() {
         {/* Inner White Box with fixed height on mobile so lists scroll instead of expanding */}
         <div className="bg-white rounded-[28px] md:rounded-[36px] flex flex-row h-[560px] sm:h-[620px] md:h-[900px] shadow-xl overflow-hidden">
           {/* Left Team List - compact on mobile */}
-          <div className="w-[60px] sm:w-[72px] md:w-[400px] border-r border-gray-200 relative flex-shrink-0">
+          <div className="w-[60px] sm:w-[72px] md:w-[400px] border-r border-black-200 relative flex-shrink-0">
             <div className="h-full overflow-y-auto custom-scroll px-2 md:px-6 py-4 md:py-6 text-black">
               <h2
                 className="mb-2 sm:mb-3 md:mb-6 text-xs sm:text-sm md:text-3xl font-semibold text-left md:text-center"
@@ -188,20 +188,31 @@ export default function Team() {
             {/* Gradient fade top & bottom */}
             <div className="pointer-events-none absolute top-0 left-0 w-full h-8 sm:h-10 md:h-12 bg-gradient-to-b from-white to-transparent" />
             <div className="pointer-events-none absolute bottom-0 left-0 w-full h-8 sm:h-10 md:h-12 bg-gradient-to-t from-white to-transparent" />
+
+            {/* ⬇ Scroll down arrow */}
+            <button
+              onClick={() => {
+                const list = document.querySelector(".custom-scroll");
+                if (list) list.scrollBy({ top: 120, behavior: "smooth" });
+              }}
+              className="absolute bottom-2 left-1/2 -translate-x-1/2 hover:scale-110 text-black text-x z-50"
+            >
+              ▼
+            </button>
           </div>
 
           {/* Right Profile Section - compact mobile spacing */}
           <div className="flex-1 p-3 sm:p-4 md:p-10 overflow-auto h-full">
             <div className="min-h-full flex flex-col justify-center md:justify-start">
-              <div className="flex items-start gap-3 sm:gap-4 md:gap-6">
+              <div className="flex flex-col items-center sm:items-start md:flex-row gap-3 sm:gap-4 md:gap-6">
                 <img
                   src={selected.image}
                   alt={selected.name}
-                  className="rounded-[16px] object-cover w-[88px] h-[88px] sm:w-[120px] sm:h-[120px] md:w-[234px] md:h-[246px]"
+                  className="rounded-[16px] object-cover w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[234px] md:h-[246px]"
                 />
-                <div className="flex-1">
+                <div className="flex-1 text-center sm:text-left">
                   <h2
-                    className="text-lg sm:text-xl md:text-4xl font-semibold text-black mt-6 sm:mt-40"
+                    className="text-lg sm:text-xl md:text-4xl font-semibold text-black mt-3 md:mt-6"
                     style={{ fontFamily: "Sora, sans-serif" }}
                   >
                     {selected.name}
@@ -220,7 +231,7 @@ export default function Team() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label="WhatsApp"
-                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-white border border-gray-200 shadow flex items-center justify-center"
+                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10  bg-white  flex items-center justify-center"
                     >
                       <img
                         src="/assets/wats.png"
@@ -231,7 +242,7 @@ export default function Team() {
                     <a
                       href={`tel:5551234567`}
                       aria-label="Phone"
-                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-white border border-gray-200 shadow flex items-center justify-center"
+                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10  bg-white  flex items-center justify-center"
                     >
                       <img
                         src="/assets/phone.png"
@@ -242,7 +253,7 @@ export default function Team() {
                     <a
                       href="#"
                       aria-label="LinkedIn"
-                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-white border border-gray-200 shadow flex items-center justify-center"
+                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white flex items-center justify-center"
                     >
                       <img
                         src="/assets/linkedin.png"
@@ -253,7 +264,7 @@ export default function Team() {
                     <a
                       href={`mailto:${email}`}
                       aria-label="Email"
-                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-white border border-gray-200 shadow flex items-center justify-center"
+                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10  bg-white flex items-center justify-center"
                     >
                       <img
                         src="/assets/mail.png"

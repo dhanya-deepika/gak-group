@@ -19,15 +19,16 @@ export default function Testimonials() {
   return (
     <section className="relative flex justify-center py-16 bg-white overflow-hidden">
       
-      {/* Decorative Lines (Placed Behind Content) */}
+      {/* Decorative Lines */}
       <img
         src="/lines/vector(1).png"
         alt="Decorative lines"
         className="absolute bottom-0 left-160 transform -translate-x-1/2 w-[2000px] h-auto object-cover opacity-100"
       />
 
-      {/* Main Content (Z-index ensures it stays above lines) */}
-      <div className="relative max-w-[1156px] w-full rounded-[40px] p-[2px] bg-gradient-to-tr from-[#231F51] via-[#B94255] to-transparent z-10">
+      {/* Main Content */}
+      <div className="relative max-w-[1156px] w-full rounded-[40px] p-[2px] 
+                      md:bg-gradient-to-tr md:from-[#231F51] md:via-[#B94255] md:to-transparent z-10">
         <div className="flex flex-col p-8 gap-10 rounded-[40px] bg-white w-full h-full">
           
           {/* === HEADING === */}
@@ -71,82 +72,66 @@ export default function Testimonials() {
                 Lorem ipsum dolor sit amet,
               </h3>
               <p className="text-black font-sora text-base font-normal leading-relaxed tracking-tight">
-                consectetur adipiscing elit. Fusce at magna nibh. Nam sed est
-                arcu. Vivamus ac volutpat orci, eget eleifend metus. Quisque non
-                lobortis leo. Integer lacinia pulvinar nunc, eu semper quam
-                dapibus id. Mauris ac massa risus. Praesent vulputate vitae ex
-                id euismod.
-                <br />
-                <br />
-                Mauris interdum iaculis viverra. Suspendisse ac quam ornare,
-                dictum ante non, cursus erat. Aenean vestibulum tortor sem, non
-                sagittis ex fringilla sit amet. Donec ac orci vel urna ornare
-                mollis in vel sapien. Suspendisse luctus accumsan lectus in
-                suscipit. Nunc non mi vitae nisi accumsan aliquet vel sed orci.
-                Nunc placerat urna quis ante mattis pulvinar eget ut arcu. Donec
+                consectetur adipiscing elit. Fusce at magna nibh. Nam sed est arcu. Vivamus ac volutpat orci, eget eleifend metus. Quisque non lobortis leo. Integer lacinia pulvinar nunc, eu semper quam dapibus id. Mauris ac massa risus. Praesent vulputate vitae ex id euismod. <br /> <br /> Mauris interdum iaculis viverra. Suspendisse ac quam ornare, dictum ante non, cursus erat. Aenean vestibulum tortor sem, non sagittis ex fringilla sit amet. Donec ac orci vel urna ornare mollis in vel sapien. Suspendisse luctus accumsan lectus in suscipit. Nunc non mi vitae nisi accumsan aliquet vel sed orci. Nunc placerat urna quis ante mattis pulvinar eget ut arcu. Donec
               </p>
             </div>
           </div>
 
-         {/* === BOTTOM ROW – CAROUSEL === */}
-<div className="overflow-x-auto w-full flex gap-4">
-  {smallVideos.map((video, idx) => {
-    const isStaticImage = !!video.overlay; // Only video3 has overlay, so it's static
-    return (
-      <div
-        key={idx}
-        className="relative w-[326px] flex-shrink-0 aspect-[326/215] rounded-[30px] overflow-hidden cursor-pointer"
-        onClick={() => {
-          if (isStaticImage) {
-            // Toggle overlay text visibility
-            setPlayingIndex(playingIndex === idx + 1 ? null : idx + 1);
-          } else {
-            handlePlay(idx + 1);
-          }
-        }}
-      >
-        {isStaticImage ? (
-          <>
-            <img
-              src={video.src}
-              alt={video.alt}
-              className="w-full h-full object-cover rounded-[30px]"
-            />
-            {playingIndex === idx + 1 && (
-              <div className="absolute inset-0 bg-black/40 flex items-end p-4 rounded-[30px]">
-                <p className="text-white font-semibold text-sm">
-                  {video.overlay}
-                </p>
-              </div>
-            )}
-          </>
-        ) : playingIndex === idx + 1 ? (
-          <video
-            src={`/video/video${idx + 2}.mp4`}
-            controls
-            autoPlay
-            className="w-full h-full object-cover rounded-[30px]"
-          />
-        ) : (
-          <>
-            <img
-              src={video.src}
-              alt={video.alt}
-              className="w-full h-full object-cover rounded-[30px]"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-md">
-                <Play className="w-6 h-6 text-black" fill="black" />
-              </div>
-            </div>
-          </>
-        )}
+          {/* === BOTTOM ROW – CAROUSEL === */}
+          <div className="overflow-x-auto w-full flex gap-4">
+            {smallVideos.map((video, idx) => {
+              const isStaticImage = !!video.overlay;
+              return (
+                <div
+                  key={idx}
+                  className="group relative w-[326px] flex-shrink-0 aspect-[326/215] rounded-[30px] overflow-hidden cursor-pointer"
+                  onClick={() => {
+                    if (!isStaticImage) {
+                      handlePlay(idx + 1);
+                    }
+                  }}
+                >
+       {isStaticImage ? (
+  <div className="group relative w-[326px] flex-shrink-0 aspect-[326/215] rounded-[30px] overflow-hidden cursor-pointer">
+    <img
+      src={video.src}
+      alt={video.alt}
+      className="w-full h-full object-cover rounded-[30px]"
+    />
+    {/* Overlay appears on hover (desktop) and tap (mobile) */}
+    <div className="absolute inset-0 bg-black/40 flex items-end p-4 rounded-[30px] 
+                    opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
+      <p className="text-white font-semibold text-sm">
+        {video.overlay}
+      </p>
+    </div>
+  </div>
+) : playingIndex === idx + 1 ? (
+  <video
+    src={`/video/video${idx + 2}.mp4`}
+    controls
+    autoPlay
+    className="w-full h-full object-cover rounded-[30px]"
+  />
+) : (
+  <>
+    <img
+      src={video.src}
+      alt={video.alt}
+      className="w-full h-full object-cover rounded-[30px]"
+    />
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-md">
+        <Play className="w-6 h-6 text-black" fill="black" />
       </div>
-    );
-  })}
-</div>
+    </div>
+  </>
+)}
 
-
+                </div>
+              );
+            })}
+          </div>
 
         </div>
       </div>

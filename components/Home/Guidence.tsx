@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+
 export default function GuidenceImage() {
   return (
     <div className="relative flex justify-center py-12 px-4 bg-white overflow-hidden">
@@ -10,12 +11,19 @@ export default function GuidenceImage() {
         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 
         w-[1900px] h-auto object-cover opacity-100"
       />
-      {/* Main Guidance Image */}
+
+      {/* Large screen image */}
       <img
         src="/Guidence.png"
         alt="Guidence"
-        className="relative w-full 
-        max-w-[1127px] h-auto rounded-[40px] object-cover"
+        className="hidden sm:block relative w-full max-w-[1127px] h-auto rounded-[40px] object-cover"
+      />
+
+      {/* Mobile screen image */}
+      <img
+        src="/Guidence2.png"
+        alt="Guidence Mobile"
+        className="block sm:hidden relative w-full max-w-[1127px] h-auto rounded-[40px] object-cover"
       />
     </div>
   );
