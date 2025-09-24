@@ -41,7 +41,6 @@ export default function BrandsSection() {
         style={{ transform: "rotate(180deg)" }}
       />
 
-     
       {/* Heading */}
       <div className="mx-auto w-full px-6">
         <h2
@@ -60,7 +59,6 @@ export default function BrandsSection() {
 
       {/* Logos section */}
       <div className="flex items-center justify-center gap-4 sm:gap-6">
-
         {/* Left Arrow */}
         <button
           aria-label="Scroll left"
@@ -72,29 +70,28 @@ export default function BrandsSection() {
 
         {/* Scrollable logos container (both small and large screens) */}
         {/* Scroll container */}
-<div
-  ref={scrollerRef}
-  className="
+        <div
+          ref={scrollerRef}
+          className="
     flex gap-8 sm:gap-10 md:gap-12 lg:gap-16 
     overflow-hidden px-2
     w-full max-w-[1100px] 
     sm:w-auto
   "
->
-  {brands.map((logo, i) => (
-    <img
-      key={i}
-      src={logo}
-      alt={`brand ${i + 1}`}
-      className="
+        >
+          {brands.map((logo, i) => (
+            <img
+              key={i}
+              src={logo}
+              alt={`brand ${i + 1}`}
+              className="
         w-32 sm:w-40 md:w-48 lg:w-56 
         h-20 sm:h-24 md:h-28 lg:h-32 
         object-contain shrink-0
       "
-    />
-  ))}
-</div>
-
+            />
+          ))}
+        </div>
 
         {/* Right Arrow */}
         <button

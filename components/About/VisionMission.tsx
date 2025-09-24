@@ -87,12 +87,28 @@ const team = [
   },
 ];
 
+// Helper function (put this above your component)
+function formatPhoneDisplay(number: string): string {
+  if (number.length === 10) {
+    return `(${number.slice(0, 3)}) ${number.slice(3, 6)}-${number.slice(6)}`;
+  }
+  return number;
+}
+
+// Component starts here
 export default function Team() {
   const [selected, setSelected] = useState(team[0]);
 
   const firstName = selected.name.split(" ")[0];
   const email = `${firstName.toLowerCase()}@gak.com`;
 
+  const contactInfo = {
+    phoneNumber: "5551234567",
+    whatsappNumber: "15559876543",
+    email: "client@example.com",
+    firstName: "John",
+    linkedInUrl: "https://linkedin.com/in/client-profile-id",
+  };
   return (
     <section className="relative flex justify-center py-10 sm:py-14 lg:py-20 bg-white px-3 sm:px-4 overflow-hidden">
       {/* Decorative Background Line */}
@@ -211,8 +227,7 @@ export default function Team() {
                   className="rounded-[16px] object-cover w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[234px] md:h-[246px]"
                 />
                 <div className="flex-1 text-center sm:text-left">
-                  <h2
-                    className="text-lg sm:text-xl md:text-4xl font-semibold text-black mt-3 md:mt-6"
+                  <h2 className="text-lg sm:text-xl md:text-4xl font-semibold text-black mt-3 md:mt-6"
                     style={{ fontFamily: "Sora, sans-serif" }}
                   >
                     {selected.name}
@@ -224,14 +239,14 @@ export default function Team() {
                     {selected.role}
                   </p>
 
-                  {/* Contact icon actions - mobile only */}
+                  {/* Mobile - Contact icons */}
                   <div className="mt-2 sm:mt-3 flex items-center gap-2.5 sm:gap-3 md:gap-4 md:hidden">
                     <a
-                      href={`https://wa.me/15559876543`}
+                      href={`https://wa.me/${contactInfo.whatsappNumber}`}
                       target="_blank"
                       rel="noreferrer"
                       aria-label="WhatsApp"
-                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10  bg-white  flex items-center justify-center"
+                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white flex items-center justify-center"
                     >
                       <img
                         src="/assets/wats.png"
@@ -239,10 +254,11 @@ export default function Team() {
                         className="w-4 h-4 sm:w-5 sm:h-5"
                       />
                     </a>
+
                     <a
-                      href={`tel:5551234567`}
+                      href={`tel:${contactInfo.phoneNumber}`}
                       aria-label="Phone"
-                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10  bg-white  flex items-center justify-center"
+                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white flex items-center justify-center"
                     >
                       <img
                         src="/assets/phone.png"
@@ -250,8 +266,11 @@ export default function Team() {
                         className="w-4 h-4 sm:w-5 sm:h-5"
                       />
                     </a>
+
                     <a
-                      href="#"
+                      href={contactInfo.linkedInUrl}
+                      target="_blank"
+                      rel="noreferrer"
                       aria-label="LinkedIn"
                       className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white flex items-center justify-center"
                     >
@@ -261,10 +280,11 @@ export default function Team() {
                         className="w-4 h-4 sm:w-5 sm:h-5"
                       />
                     </a>
+
                     <a
-                      href={`mailto:${email}`}
+                      href={`mailto:${contactInfo.email}`}
                       aria-label="Email"
-                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10  bg-white flex items-center justify-center"
+                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white flex items-center justify-center"
                     >
                       <img
                         src="/assets/mail.png"
@@ -302,7 +322,7 @@ export default function Team() {
                 </p>
               </div>
 
-              {/* Contact - desktop/tablet detailed layout */}
+              {/* Desktop - Contact detailed */}
               <div className="mt-4 md:mt-6 text-black hidden md:block">
                 <h3
                   className="font-bold text-base md:text-xl"
@@ -310,6 +330,7 @@ export default function Team() {
                 >
                   Contact
                 </h3>
+
                 <div className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm md:text-base">
                   <div className="flex items-center gap-2">
                     <img
@@ -317,31 +338,59 @@ export default function Team() {
                       alt="Phone"
                       className="w-5 h-5"
                     />
-                    <span>(555) 123-4567</span>
+                    <a
+                      href={`tel:${contactInfo.phoneNumber}`}
+                      className="hover:underline"
+                    >
+                      {formatPhoneDisplay(contactInfo.phoneNumber)}{" "}
+                      {/* optional helper to format (555) 123-4567 */}
+                    </a>
                   </div>
+
                   <div className="flex items-center gap-2">
                     <img
                       src="/assets/wats.png"
                       alt="WhatsApp"
                       className="w-5 h-5"
                     />
-                    <span>(555) 987-6543</span>
+                    <a
+                      href={`https://wa.me/${contactInfo.whatsappNumber}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:underline"
+                    >
+                      {formatPhoneDisplay(contactInfo.whatsappNumber)}
+                    </a>
                   </div>
+
                   <div className="flex items-center gap-2">
                     <img
                       src="/assets/linkedin.png"
                       alt="LinkedIn"
                       className="w-5 h-5"
                     />
-                    <span>{firstName} M</span>
+                    <a
+                      href={contactInfo.linkedInUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:underline"
+                    >
+                      {contactInfo.firstName} M
+                    </a>
                   </div>
+
                   <div className="flex items-center gap-2">
                     <img
                       src="/assets/mail.png"
                       alt="Email"
                       className="w-5 h-5"
                     />
-                    <span>{email}</span>
+                    <a
+                      href={`mailto:${contactInfo.email}`}
+                      className="hover:underline"
+                    >
+                      {contactInfo.email}
+                    </a>
                   </div>
                 </div>
               </div>

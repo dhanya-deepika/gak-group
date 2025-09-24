@@ -4,17 +4,24 @@ import Image from "next/image";
 
 export default function SocialReviews() {
   const reviews = [
+
     {
       logo: "/logos/mimimail.png",
       platform: "Google reviews",
-      text: "Mauris interdum iaculis viverra. Suspendisse ac quam ornare, dictum ante erat. Aenean vestibulum tortor sem, non sagittis ex fringilla sit amet. Donec urna ornare mollis in vel sapien.",
-      author: "Sarah Miller",
+      text: "We had an excellent experience with GAK Group in our property search. A special thanks to Gowtham and Khyathi for their exceptional support, guidance, and patience throughout the process. They understood our requirements well, provided us with the right options, and ensured complete transparency at every step. Their professionalism and commitment made the entire journey smooth and hassle-free. We are extremely satisfied with our purchase and would highly recommend GAK Group to anyone looking for trusted and reliable property consultants.",
+      author: "Amaresh Killam",
     },
     {
       logo: "/logos/mimimail.png",
-      platform: "Facebook reviews",
-      text: "Suspendisse luctus accumsan lectus in suscipit. Donec urna ornare mollis in vel sapien.",
-      author: "John Carter",
+      platform: "Google reviews",
+      text: "We had a wonderful experience with GAK Group during our property search. A special thanks to Gowtham and Khyathi for their constant support and guidance in helping us find the right property. Their professionalism, transparency, and dedication made the entire process smooth and stress-free. We are very happy with our purchase and would highly recommend GAK Group to anyone looking for a reliable property consultant.",
+      author: "Satya Hari",
+    },
+    {
+      logo: "/logos/mimimail.png",
+      platform: "Google reviews", 
+      text: "Wonderful experience with GAK! They suggested the right options tailored to my needs and were very genuine and trustworthy throughout the process. I interacted with several people in their team, and all were professional and supportive. I especially appreciated Subhash, who was fair, transparent, and clear in his communication, making the entire experience smooth and reassuring.",
+      author: "Laxmi Anil",
     },
   ];
 
@@ -63,11 +70,10 @@ export default function SocialReviews() {
           </div>
 
           {/* Text side */}
-          <div className="flex flex-col justify-center px-3 sm:px-6 py-3 sm:py-6 text-black sm:w-[700px] w-full max-w-[320px] sm:max-w-full mx-auto">
+          <div className="flex flex-col justify-center px-3 sm:px-6 py-3 sm:py-6 text-black sm:w-[700px] w-full max-w-[320px] sm:max-w-full mx-auto">,
             <p
               className="text-[11px] sm:text-sm mb-1 sm:mb-2"
-              style={{ fontFamily: "Sora", color: "#7a7a5c" }}
-            >
+              style={{ fontFamily: "Sora", color: "#7a7a5c" }}>
               {reviews[active].platform}
             </p>
             <p

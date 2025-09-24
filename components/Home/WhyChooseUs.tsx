@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
           {slides.map((slide, i) => {
             const index = (i - current + slides.length) % slides.length;
 
-            let scale = 0.6,
+            let scale = 1,
               translateX = 0,
               translateY = 40,
               zIndex = 0,
@@ -126,8 +126,8 @@ export default function WhyChooseUs() {
           <button
             onClick={nextSlide}
             className="absolute -right-2 sm:-right-6 md:-right-33 top-1/2 -translate-y-1/2 hover:scale-110 text-black text-base sm:text-lg md:text-xl z-50"
-          >
-            ▶
+        >
+            ▶ 
           </button>
 
           {/* Dots */}

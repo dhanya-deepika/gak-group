@@ -55,12 +55,12 @@ export default function ServicesSection() {
 
   return (
     <section className="relative py-16 sm:py-20 bg-white overflow-hidden">
-      {/* Decorative Lines in the Background */}
+      {/* Decorative Lines in the Background
       <img
         src="/lines/vector(2).png"
         alt="Decorative lines"
         className="absolute bottom-0  left-180 transform -translate-x-1/2 w-[1500px] h-auto object-cover opacity-100 mt-4"
-      />
+      /> */}
 
       <div className="mx-auto max-w-6xl px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 text-center lg:text-left">
@@ -125,7 +125,7 @@ export default function ServicesSection() {
                 width={100}
                 height={100}
                 className="w-20 h-30 sm:w-20 sm:h-10 lg:w-[74px] lg:h-[121px]"
-              />
+              />  
               <p
                 className="text-[18px] lg:text-[20px] font-medium text-black"
                 style={{ fontFamily: "Sora, sans-serif" }}

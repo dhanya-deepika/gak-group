@@ -10,6 +10,7 @@
     "lint": "next lint --max-warnings=0"
   },
   "dependencies": {
+    "emailjs-com": "^3.2.0",
     "lucide-react": "^0.542.0",
     "next": "15.5.2",
     "react": "19.1.0",

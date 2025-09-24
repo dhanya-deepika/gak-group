@@ -26,7 +26,7 @@ export default function WhoWeAre() {
       <p
         className="text-xs sm:text-sm md:text-base text-gray-700 max-w-4xl leading-relaxed font-[Sora] text-justify mx-auto md:mx-0 md:pl-30"
       >
-        GAK Group is a trusted Real Estate wealth advisory firm specializing in strategic real estate investments. We provide residential and commercial real estate advisory services, property investment advisory, and real estate risk assessment, helping clients secure high-potential properties with confidence and long-term value.
+        GAK Group is a trusted  wealth advisory firm specializing in strategic real estate investments. We provide residential and commercial real estate advisory services, property investment advisory, and real estate risk assessment, helping clients secure high-potential properties with confidence and long-term value.
       </p>
     </div>
 

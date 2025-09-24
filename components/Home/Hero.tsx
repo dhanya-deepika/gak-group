@@ -45,8 +45,7 @@ export default function HeroSection() {
           <h1
             className="
               text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl
-              font-bold mb-6
-            "
+              font-bold mb-6"
           >
             With You Always, All Ways!
           </h1>

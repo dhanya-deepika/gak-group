@@ -43,14 +43,14 @@ export default function HeroSection() {
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-12">
-              <h1
+              <h2
                 className="
                   text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl
                   font-bold mb-6
                 "
               >
                 Our Services
-              </h1>
+              </h2>
 
               <p
                 className="

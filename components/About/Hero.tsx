@@ -19,14 +19,9 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-12">
-        <h1
-          className="
-            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
-            font-bold mb-6
-          "
-        >
+        <h4 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
           About Us
-        </h1>
+        </h4>
       </div>
     </section>
   );
