@@ -124,8 +124,6 @@ export default function ProjectsPage() {
       description:
         "Imagined as a slice of 'Central Park' in Hyderbad,this upcoming skyline statement delivers sweeping water views over its 25-acre expanse,featuring up to 11 towering heights,plush sky villas, and spacious 3-4.5 BHK apartments.While promotional info suggests 45 floors,other listings note G+27,either way,it's designed for grandeur.",
     },
-
-
       {
       name: "Manchirevula",
       companies: ["Rajapushpa Infina", "2 & 3 BHK","1,326-2,257 SFT","Under Construction"],
@@ -169,22 +167,6 @@ export default function ProjectsPage() {
       description:
         "Spread over 9.5 acres, Sattva Lakeridge offers luxury living with panoramic lake views. With 6 towers rising 37 floors high and a 65,000 sq ft clubhouse, it caters to those seeking a blend of exclusivity and convenience. Certified IGBC Gold for sustainability, the project boasts private lifts, large balconies, and high-end amenities, making it one of the landmark gated communities in Neopolis.",
     },
-
-    // {
-    //   name: "Neopolis",
-    //   companies: ["Yula & Globus - Plot No. 11", "3 & 4 BHK","2,235-3,510 SFT","Pre-Launch"],
-    //   image: "/images/yula.jpg",
-    //   description:
-    //     "Yula Globus Neo (Plot No. 11) is one of the high-profile luxury launches in Neopolis,Kokapet. With two towers rising to 57 floors, it brings international-grade architecture and design to Hyderabad’s most premium micro-market. Each residence blends space efficiency with luxury, ensuring sweeping city views,branded specifications, and high lifestyle quotient."
-    // },
-    // {
-    //   name: "Neopolis",
-    //   companies: ["Sattva Lakeridge","3,4 & 5 BHK","2,100-5,500 SFT","Under Construction"],
-    //   image: "/images/yula.jpg",
-    //   description:
-    //     "Spread over 9.5 acres, Sattva Lakeridge offers luxury living with panoramic lake views. With 6 towers rising 37 floors high and a 65,000 sq ft clubhouse, it caters to those seeking a blend of exclusivity and convenience. Certified IGBC Gold for sustainability, the project boasts private lifts, large balconies, and high-end amenities, making it one of the landmark gated communities in Neopolis.",
-    // },
-
      {
       name: "Neopolis",
       companies: ["MSN Realty - One", "4 BHK","5,250-7,460 SFT","Under Construction"],
@@ -203,7 +185,7 @@ export default function ProjectsPage() {
     {
       name: "Neopolis",
       companies: ["SSI - Fortune Surajbhan Grande", "3.5 & 4 BHK","2,850-3,850 SFT","Pre-Launch (EOI stage)"],
-      image: "/images/sassoul.jpg",
+      image: "/images/.jpg",
       description:
         "Fortune Surajbhan Grande is a 12-acre luxury enclave with 6 towers and 1,326 residences. With all-corner apartments offering lake and park views, the project emphasizes openness, natural light, and premium finishes. Positioned in the emerging Neopolis corridor, it is set to be one of the sought-after pre-launch investments with amenities and location advantage.",
     },
