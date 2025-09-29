@@ -33,9 +33,7 @@ export default function Navbar() {
 
       {/* Navbar Content */}
       <div
-        className="relative w-full h-[100px] sm:h-[120px] flex justify-between items-center max-w-7xl mx-auto  sm:px-10 z-10 pl-0 sm:pl-2
-"
-      >
+        className="relative w-full h-[100px] sm:h-[120px] flex justify-between items-center max-w-7xl mx-auto  sm:px-10 z-10 pl-0 sm:pl-2">
         {/* Logo */}
         <Link href="/">
           <Image
@@ -50,8 +48,7 @@ export default function Navbar() {
         {/* Hamburger (Mobile) */}
         <button
           className="sm:hidden block text-3xl text-gray-900 z-20"
-          onClick={() => setOpen(!open)}
-        >
+          onClick={() => setOpen(!open)}>
           {open ? "✕" : "☰"}
         </button>
 

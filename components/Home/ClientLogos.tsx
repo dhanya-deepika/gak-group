@@ -42,13 +42,11 @@ export default function BrandsSection() {
         className="pointer-events-none select-none absolute -top-6 right-0 w-full max-w-none"
         style={{ transform: "rotate(180deg)" }}
       />
-
-      {/* Heading */}
+      
       <div className="mx-auto w-full flex justify-start px-6 md:ml-15">
         <h2
-          className="text-center font-normal mb-8 w-[806.17px] max-w-[90%] text-black"
-          style={{fontFamily: "Sora",fontSize: "30px",lineHeight: "100%",letterSpacing: "-0.02em",}}
-        >
+          className="text-center font-normal mb-8 w-[806.17px] max-w-[90%] text-black" 
+          style={{fontFamily: "Sora",fontSize: "30px",lineHeight: "100%",letterSpacing: "-0.02em",}}>
           OUR TRUSTED CLIENTS
         </h2>
       </div>
@@ -56,11 +54,10 @@ export default function BrandsSection() {
       {/* Logos row with arrows */}
       <div className="flex items-center justify-center  gap-6">
         {/* Left arrow */}
-        <button
+        <button 
           aria-label="Scroll left"
           onClick={() => scrollByLogos("left")}
-          className="select-none text-black hover:opacity-80 transition-opacity"
-        >
+          className="select-none text-black hover:opacity-80 transition-opacity">
           <span className="text-[20px] leading-none align-middle">◀</span>
         </button>
 
@@ -71,20 +68,16 @@ export default function BrandsSection() {
         >
           {brands.map((logo, i) => (
             <img
-              key={i}
+              key={i} 
               src={logo}
               alt={`brand ${i + 1}`}
-              className="w-32 sm:w-40 md:w-48 lg:w-58 h-20 sm:h-24 md:h-28 lg:h-35 object-contain shrink-0"
-            />
+              className="w-32 sm:w-40 md:w-48 lg:w-58 h-20 sm:h-24 md:h-28 lg:h-35 object-contain shrink-0"/>
           ))}
         </div>
 
         {/* Right arrow */}
-        <button
-          aria-label="Scroll right"
-          onClick={() => scrollByLogos("right")}
-          className="select-none text-black hover:opacity-80 transition-opacity"
-        >
+        <button aria-label="Scroll right" onClick={() => scrollByLogos("right")}
+          className="select-none text-black hover:opacity-80 transition-opacity">
           <span className="text-[20px] leading-none align-middle">▶</span>
         </button>
       </div>

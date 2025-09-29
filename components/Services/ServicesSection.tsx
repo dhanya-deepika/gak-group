@@ -83,7 +83,7 @@ export default function ServicesSection() {
             </div>
 
             <div className="mt-8 flex flex-col gap-8 w-full">
-              {customerServices.map((service, i) => (
+               {customerServices.map((service, i) => (
                 <div key={i} className="flex gap-7 items-center lg:ml-20">
                   <Image
                     src={service.icon}

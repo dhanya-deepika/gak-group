@@ -370,9 +370,7 @@ export default function ProjectsPage() {
             <div className="flex-1 w-full md:max-w-[450px]">
               <div className="rounded-full p-[2px] bg-gradient-to-r from-[#B74254] to-[#231F51]">
                 <div
-                  className={`flex flex-wrap items-center bg-white rounded-full px-3 py-2 min-h-[46px] gap-2
-    ${searchTags.length > 2 ? "py-3" : "py-2"}`}
-                >
+                  className={`flex flex-wrap items-center bg-white rounded-full px-3 py-2 min-h-[46px] gap-2 ${searchTags.length > 2 ? "py-3" : "py-2"}`}>
                   {/* Tags */}
                   {searchTags.map((tag) => (
                     <span
@@ -423,9 +421,7 @@ export default function ProjectsPage() {
                   className="cursor-pointer rounded-[40px] p-[1px] w-full max-w-[340px] flex flex-col"
                   style={{
                     background:
-                      "linear-gradient(90deg, #B74254 0%, #231F51 100%)",
-                  }}
-                >
+                      "linear-gradient(90deg, #B74254 0%, #231F51 100%)",}}>
                   <div className="bg-white rounded-[39px] w-full h-full p-6 flex flex-col overflow-hidden">
                     {/* Image */}
                     <div className="relative w-full aspect-[4/5]">
@@ -491,8 +487,7 @@ export default function ProjectsPage() {
                         onClick={() =>
                           setExpandedCard(expandedCard === idx ? null : idx)
                         }
-                        className="self-start mt-1 text-sm font-medium text-[#231F51]"
-                      >
+                        className="self-start mt-1 text-sm font-medium text-[#231F51]">
                         {expandedCard === idx ? "Read Less" : "Read More"}
                       </button>
                     </div>
